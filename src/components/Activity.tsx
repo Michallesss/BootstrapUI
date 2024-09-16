@@ -9,43 +9,26 @@ export default function Activity() {
             connect with the needs of your audience early and often.</p>
         </div>
         <div className="grid gap-8 lg:grid-cols-3">
-          {/* Article */}
-          <article className="p-6 bg-white rounded-lg border border-gray-200 shadow-md">
-            <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900"><a href="#">How to quickly
-                deploy a static website</a></h2>
-            <p className="mb-5 font-light text-gray-500">Static websites are now used to bootstrap lots of
-              websites and are becoming the basis for a variety of tools that even influence both web designers and
-              developers influence both web designers and developers.</p>
-            <div className="flex justify-between items-center">
-            </div>
-          </article>
-          {/* End Article */}
+          <Article title="How to quickly deploy a static website" description="Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers influence both web designers and developers." />
 
-          {/* Article */}
-          <article className="p-6 bg-white rounded-lg border border-gray-200 shadow-md">
-            <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900"><a href="#">How to quickly
-                deploy a static website</a></h2>
-            <p className="mb-5 font-light text-gray-500">Static websites are now used to bootstrap lots of
-              websites and are becoming the basis for a variety of tools that even influence both web designers and
-              developers influence both web designers and developers.</p>
-            <div className="flex justify-between items-center">
-            </div>
-          </article>
-          {/* End Article */}
+          <Article title="How to quickly deploy a static website" description="Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers influence both web designers and developers." />
 
-          {/* Article */}
-          <article className="p-6 bg-white rounded-lg border border-gray-200 shadow-md">
-            <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900"><a href="#">How to quickly
-                deploy a static website</a></h2>
-            <p className="mb-5 font-light text-gray-500">Static websites are now used to bootstrap lots of
-              websites and are becoming the basis for a variety of tools that even influence both web designers and
-              developers influence both web designers and developers.</p>
-            <div className="flex justify-between items-center">
-            </div>
-          </article>
-          {/* End Article */}
+          <Article title="How to quickly deploy a static website" description="Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers influence both web designers and developers." />
         </div>
       </div>
     </section>
+  );
+}
+
+function Article({ title, href, description }: { title: string, href?: URL, description: string }) {
+  const url = href ? href.toString() : "#";
+
+  return (
+    <article className="p-6 bg-white rounded-lg border border-gray-200 shadow-md">
+      <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900"><a href={url}>{title}</a></h2>
+      <p className="mb-5 font-light text-gray-500">{description}</p>
+      <div className="flex justify-between items-center">
+      </div>
+    </article>
   );
 }
